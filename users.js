@@ -21,7 +21,7 @@ searchBar.onkeyup = ()=> {
         searchBar.classList.remove("active"); 
     }
     let xhr = new XMLHttpRequest();
-    xhr.open("POST", "../back-end/search.php", true);
+    xhr.open("POST", "./back-end/search.php", true);
     xhr.onload = ()=>{ 
         if(xhr.readyState === XMLHttpRequest.DONE){
             if(xhr.status === 200){
@@ -36,7 +36,7 @@ searchBar.onkeyup = ()=> {
 
 setInterval(() =>{
     let xhr = new XMLHttpRequest();
-    xhr.open("GET", "../back-end/users.php", true);
+    xhr.open("GET", "./back-end/users.php", true);
     xhr.onload = ()=>{ 
         if(xhr.readyState === XMLHttpRequest.DONE){
             if(xhr.status === 200){

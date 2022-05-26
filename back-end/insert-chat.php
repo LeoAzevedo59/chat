@@ -1,7 +1,7 @@
 <?php 
     session_start();
     if(isset($_SESSION['UNIQUE_ID'])){
-        include_once "config.php";
+        include_once "../back-end/config.php";
         $incoming_id = mysqli_real_escape_string($connection, $_POST['incoming_id']);
         $outgoing_id = mysqli_real_escape_string($connection, $_POST['outgoing_id']);
         $message = mysqli_real_escape_string($connection, $_POST['message']);
@@ -11,6 +11,6 @@
                                               VALUES ({$incoming_id}, {$outgoing_id},'{$message}')") OR DIE();
         }
     }else {
-        header("~/front-end/login.php");
+        header("./login.php");
     }
 ?>

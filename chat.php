@@ -11,7 +11,7 @@
         <section class="chat-area">
             <header>
                 <?php 
-                    include_once "../back-end/config.php";
+                    include_once "./back-end/config.php";
                     $user_id = mysqli_real_escape_string($connection, $_GET['user_id']);
                     $sql = mysqli_query($connection, "SELECT * FROM users WHERE UNIQUE_ID = {$user_id}");
                     if(mysqli_num_rows($sql) > 0){
@@ -26,7 +26,7 @@
                               </svg>
                         </a>
                     </span>
-                    <img src="../back-end/images/<?php echo $row['IMAGE_PROFILE']?>" alt="">
+                    <img src="./back-end/images/<?php echo $row['IMAGE_PROFILE']?>" alt="">
                     <div class="details">
                         <span><?php echo $row['FIRST_NAME'] . " " . $row['LAST_NAME']?></span>
                         <p><?php echo $row['STATUS']?></p>
@@ -47,6 +47,6 @@
             </form>
         </section>
     </div>
-    <script src="./js/chat.js"></script>
+    <script src="chat.js"></script>
 </body>
 </html>

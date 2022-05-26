@@ -1,7 +1,7 @@
 <?php 
     session_start();
     if(isset($_SESSION['UNIQUE_ID'])){
-        include_once "config.php";
+        include_once "../back-end/config.php";
         $logout_id = mysqli_real_escape_string($connection, $_GET['logout_id']);
         if(isset($logout_id)){
             $status = "Offline now";
@@ -9,14 +9,14 @@
             if($sql){
                 session_unset();
                 session_destroy();
-                header("location: ../front-end/login.php");
+                header("location: ../login.php");
             }
         }else {
-            header("location: ../front-end/users.php");
+            header("location: ../users.php");
         }
 
     }else {
-        header("location: ../front-end/login.php");
+        header("location: ../login.php");
     }
 
 ?>

@@ -43,6 +43,6 @@
             <div class="link">Already signed up? <a href="login.php">Login nows</a></div>
         </section>
     </div>
-    <script src="../front-end/js/register.js"></script>
+    <script src="register.js"></script>
 </body>
 </html>

@@ -27,6 +27,6 @@
             <div class="link">Not yet signed up? <a href="index.php">Signup nows</a></div>
         </section>
     </div>
-    <script src="js/login.js"></script>
+    <script src="login.js"></script>
 </body>
 </html>

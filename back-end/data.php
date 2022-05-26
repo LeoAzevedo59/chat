@@ -1,4 +1,5 @@
 <?php
+    include_once "../back-end/config.php";
     while($row = mysqli_fetch_assoc($sql)){
         $sql2 = "SELECT * FROM messages WHERE (INCOMING_MSG_ID = {$row['UNIQUE_ID']} OR
                                                OUTGOING_MSG_ID = {$row['UNIQUE_ID']}) AND
@@ -20,9 +21,9 @@
         
         ($outgoing_id == $outGoingNotNull) ? $you = "You: " : $you = "";
         
-        $output .= '<a href="../front-end/chat.php?user_id='.$row['UNIQUE_ID'].'">
+        $output .= '<a href="chat.php?user_id='.$row['UNIQUE_ID'].'">
                     <div class="content">
-                        <img src="../back-end/images/'. $row['IMAGE_PROFILE'] .'" alt="">
+                        <img src="back-end/images/'. $row['IMAGE_PROFILE'] .'" alt="">
                         <div class="details">
                             <span>'. $row['FIRST_NAME']. " " . $row['LAST_NAME'] .'</span>
                             <p>'.$you .$msg.'</p>

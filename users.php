@@ -5,26 +5,26 @@
     }
 ?>
 
-<?php include_once "header.php"; ?>
+<?php include_once "./header.php"; ?>
 <body>
     <div class="wrapper">
         <section class="users">
             <header>
                 <?php 
-                    include_once "../back-end/config.php";
+                    include_once "./back-end/config.php";
                     $sql = mysqli_query($connection, "SELECT * FROM users WHERE UNIQUE_ID = {$_SESSION['UNIQUE_ID']}");
                     if(mysqli_num_rows($sql) > 0){
                         $row = mysqli_fetch_assoc($sql);
                     }
                 ?>
                 <div class="content">
-                    <img src="../back-end/images/<?php echo $row['IMAGE_PROFILE']?>" alt="">
+                    <img src="./back-end/images/<?php echo $row['IMAGE_PROFILE']?>" alt="">
                     <div class="details">
                         <span><?php echo $row['FIRST_NAME'] . " " . $row['LAST_NAME']?></span>
                         <p><?php echo $row['STATUS']?></p>
                     </div>
                 </div>
-                <a href="../back-end/logout.php?logout_id=<?php echo $row['UNIQUE_ID'] ?>" class="logout">Logout</a>
+                <a href="back-end/logout.php?logout_id=<?php echo $row['UNIQUE_ID'] ?>" class="logout">Logout</a>
             </header>
             <div class="search">
                 <div class="text">Select an user to start chat</div>
@@ -47,6 +47,6 @@
         </section>
     </div>
 
-    <script src="../front-end/js/users.js"></script>
+    <script src="users.js"></script>
 </body>
 </html>

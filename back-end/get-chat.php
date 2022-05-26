@@ -33,7 +33,7 @@
                                 </div> ';
                 }else {
                     $output .=' <div class="chat incoming">
-                                <img src="../back-end/images/'. $row2['IMAGE_PROFILE'] .'" alt="">
+                                <img src="back-end/images/'. $row2['IMAGE_PROFILE'] .'" alt="">
                                     <div class="details">
                                         <p>'. $row['MSG'] .'</p>
                                     </div>
@@ -42,6 +42,6 @@
             }
             echo $output;
     }else {
-    header("../front-end/login.php");
+    header("./login.php");
     }
 ?>
