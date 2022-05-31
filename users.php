@@ -20,8 +20,8 @@
                 <div class="content">
                     <img src="./back-end/images/<?php echo $row['IMAGE_PROFILE']?>" alt="">
                     <div class="details">
-                        <span><?php echo $row['FIRST_NAME'] . " " . $row['LAST_NAME']?></span>
-                        <p><?php echo $row['STATUS']?></p>
+                        <span><?php echo $row['FIRST_NAME'] . " " . $row['LAST_NAME']?></span> 
+                        <p><?php echo $row['STATUS']?></p> 
                     </div>
                 </div>
                 <a href="back-end/logout.php?logout_id=<?php echo $row['UNIQUE_ID'] ?>" class="logout">Logout</a>

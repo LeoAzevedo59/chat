@@ -6,10 +6,12 @@
         if(isset($logout_id)){
             $status = "Offline now";
             $sql = mysqli_query($connection, "UPDATE users SET status = '{$status}' WHERE UNIQUE_ID = {$logout_id}");
+            $sql = true;
             if($sql){
                 session_unset();
                 session_destroy();
                 header("location: ../login.php");
+  
             }
         }else {
             header("location: ../users.php");
